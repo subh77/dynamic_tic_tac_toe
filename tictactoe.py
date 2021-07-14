@@ -42,12 +42,28 @@
 # win(game)
 
 
-# vertical winner
-game = [[1, 0, 2], [0, 0, 2], [1, 0, 2]]
-for i in range(len(game)):
-    col_val = []
-    for row in game:
-        col_val.append(row[i])
-    print(col_val)
-    if col_val.count(col_val[0]) == len(col_val) and col_val[0] != 0:
+# # vertical winner
+# game = [[1, 0, 2], [0, 0, 2], [1, 0, 2]]
+# for i in range(len(game)):
+#     col_val = []
+#     for row in game:
+#         col_val.append(row[i])
+#     print(col_val)
+#     if col_val.count(col_val[0]) == len(col_val) and col_val[0] != 0:
+#         print("Winner")
+
+game = [[2, 0, 1], [0, 1, 2], [1, 0, 2]]
+
+
+def dg_win(game):
+    dg_val = []
+    for i in range(len(game)):
+        dg_val.append(game[i][i])
+    print(dg_val)
+    if dg_val.count(dg_val[0]) == len(dg_val) and dg_val[0] != 0:
         print("Winner")
+
+
+dg_win(game)
+game2 = game[::-1]
+dg_win(game2)
