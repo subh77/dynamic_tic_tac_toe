@@ -19,24 +19,35 @@
 # game = game_board(game, player=1, row=2, column=1)
 
 
-game = [[1, 1, 1], [2, 0, 0], [0, 0, 2]]
+# game = [[1, 1, 1], [2, 0, 0], [0, 0, 2]]
 
-# horizontal winner
-def win(current_game):
+# # horizontal winner
+# def win(current_game):
+#     for row in game:
+#         print(row)
+#         if row.count(row[0]) == len(row) and row[0] != 0:
+#             print("Winner")
+#         # I have a problem with over engineering simple solutions help me!
+#         # The below code block is more optimized for cases where it finds unmatching elements with the 1st list element (since it breaks and stops checking)
+#         # set_flag = True
+#         # print(row)
+#         # for item in row:
+#         #     if row[0] != item:
+#         #         set_flag = False
+#         #         break
+#         # if set_flag == True:
+#         #     print("Winner")
+
+
+# win(game)
+
+
+# vertical winner
+game = [[1, 0, 2], [0, 0, 2], [1, 0, 2]]
+for i in range(len(game)):
+    col_val = []
     for row in game:
-        print(row)
-        if row.count(row[0]) == len(row) and row[0] != 0:
-            print("Winner")
-        # I have a problem with over engineering simple solutions help me!
-        # The below code block is more optimized for cases where it finds unmatching elements with the 1st list element (since it breaks and stops checking)
-        # set_flag = True
-        # print(row)
-        # for item in row:
-        #     if row[0] != item:
-        #         set_flag = False
-        #         break
-        # if set_flag == True:
-        #     print("Winner")
-
-
-win(game)
+        col_val.append(row[i])
+    print(col_val)
+    if col_val.count(col_val[0]) == len(col_val) and col_val[0] != 0:
+        print("Winner")
