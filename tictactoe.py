@@ -74,7 +74,8 @@ def game_board(game_map, player=0, row=0, column=0, just_display=True):
 
 play = True
 while play:
-    game = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    game_size = int(input("Enter the grid size for tic-tac-toe:  "))
+    game = [[0 for i in range(game_size)] for i in range(game_size)]
     game_won = False
     game_val, _ = game_board(game, just_display=False)
     player_choice = itertools.cycle(range(1, 3))
