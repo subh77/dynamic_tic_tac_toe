@@ -1,3 +1,5 @@
+import itertools
+
 # game = [[1, 1, 1], [0, 2, 2], [0, 0, 2]]  # horizontal testing
 # game = [[1, 2, 1], [0, 2, 1], [0, 2, 2]]  # vertical testing
 # game = [[2, 0, 1], [2, 1, 2], [1, 0, 0]]  # diagonal testing
@@ -67,8 +69,10 @@ while play:
 
     game_won = False
     game = game_board(game, just_display=False)
+    player_choice = itertools.cycle(range(1, 3))
     while not game_won:
-        current_player = 1
+        current_player = next(player_choice)
+        print(f"Current player is {current_player}")
         row_choice = int(input("Enter your row position. (0,1,2): "))
         col_choice = input("Enter your col position. (a,b,c): ")
         col_choice = (
