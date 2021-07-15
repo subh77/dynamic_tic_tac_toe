@@ -56,7 +56,9 @@ def game_board(game_map, player=0, row=0, column=0, just_display=True):
         if game_map[row][column] != 0:
             print("This position has already been played")
             return game_map, False
-        print("   a  b  c")
+        print(
+            "   " + "  ".join([str(i) for i in range(len(game_map))])
+        )  # list comprehension, equivalent to print("   0  1  2")
         if just_display:
             game_map[row][column] = player
         for count, i in enumerate(game):
