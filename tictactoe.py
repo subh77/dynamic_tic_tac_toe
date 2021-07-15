@@ -3,7 +3,7 @@ import itertools
 
 def win(cg):
     def win_condition(condition):
-        if row.count(row[0]) == len(row) and row[0] != 0:
+        if condition.count(condition[0]) == len(condition) and condition[0] != 0:
             return True
         else:
             return False
@@ -42,9 +42,11 @@ def win(cg):
             print(f"Winner Diagonally is Player {dg_val[0]}")
             return True
 
-    dg_win(cg)
+    if dg_win(cg):
+        return True
     cg2 = cg[::-1]
-    dg_win(cg2)
+    if dg_win(cg2):
+        return True
 
     return False
 
@@ -94,7 +96,5 @@ while play:
                 print("Bbye")
                 play = False
             else:
-                print(
-                    "That's not a valid input.... I'm just a computer pls don't torture me"
-                )
+                print("Not a valid input... I'm just a computer pls don't torture me")
                 play = False
