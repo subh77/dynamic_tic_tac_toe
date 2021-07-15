@@ -1,9 +1,5 @@
 import itertools
 
-# game = [[1, 1, 1], [0, 2, 2], [0, 0, 2]]  # horizontal testing
-# game = [[1, 2, 1], [0, 2, 1], [0, 2, 2]]  # vertical testing
-# game = [[2, 0, 1], [2, 1, 2], [1, 0, 0]]  # diagonal testing
-
 
 def win(cg):
     def win_condition(condition):
@@ -102,6 +98,3 @@ while play:
                     "That's not a valid input.... I'm just a computer pls don't torture me"
                 )
                 play = False
-
-# game = game_board(game, just_display=False)
-# game = game_board(game, player=1, row=2, column=1)
