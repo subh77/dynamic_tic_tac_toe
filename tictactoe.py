@@ -18,8 +18,8 @@ def main():
             played = False
 
             while not played:
-                row_choice = int(input("Enter your row position. (0,1,2): "))
-                col_choice = int(input("Enter your col position. (0,1,2): "))
+                row_choice = int(input("Enter your row position : "))
+                col_choice = int(input("Enter your col position : "))
                 game_val, played = game_board(
                     game, current_player, row_choice, col_choice
                 )
